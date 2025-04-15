@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Weekly Meal Planner - Google Sheets Template</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .code-block { background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .section { margin-bottom: 30px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .note { background-color: #fff3cd; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Weekly Meal Planner for Google Sheets</h1>
+    
+    <div class="section">
+        <h2>Sheet 1: Weekly Meal Plan</h2>
+        <p>This is the main interface where you'll plan your meals for the week.</p>
+        <div class="code-block">
+            <table>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td colspan="4" style="text-align: center; font-weight: bold;">WEEKLY MEAL PLANNER</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Week:</td>
+                    <td colspan="3">=TEXT(TODAY(), "mmmm d") & " - " & TEXT(TODAY()+6, "mmmm d, yyyy")</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="4"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td style="font-weight: bold;">Day</td>
+                    <td style="font-weight: bold;">Breakfast</td>
+                    <td style="font-weight: bold;">Lunch</td>
+                    <td style="font-weight: bold;">Dinner</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>=TEXT(TODAY(), "dddd")</td>
+                    <td>Data validation dropdown</td>
+                    <td>Data validation dropdown</td>
+                    <td>Data validation dropdown</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>=TEXT(TODAY()+1, "dddd")</td>
+                    <td>Data validation dropdown</td>
+                    <td>Data validation dropdown</td>
+                    <td>Data validation dropdown</td>
+                </tr>
+                <tr>
+                    <td>7-11</td>
+                    <td colspan="4">Continue for remaining days of the week...</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td colspan="4"></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td colspan="2" style="font-weight: bold;">SHOPPING LIST</td>
+                    <td colspan="2" style="font-weight: bold;">NUTRITION SUMMARY</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td colspan="2">Auto-generated list from recipes</td>
+                    <td colspan="2">Calculated nutrition totals</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sheet 2: Recipe Database</h2>
+        <p>This sheet stores all your meal options with their ingredients and nutrition information.</p>
+        <div class="code-block">
+            <table>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                    <th>F</th>
+                    <th>G</th>
+                    <th>H</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td colspan="7" style="text-align: center; font-weight: bold;">RECIPE DATABASE</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td style="font-weight: bold;">Meal Name</td>
+                    <td style="font-weight: bold;">Meal Type</td>
+                    <td style="font-weight: bold;">Ingredients</td>
+                    <td style="font-weight: bold;">Calories</td>
+                    <td style="font-weight: bold;">Protein (g)</td>
+                    <td style="font-weight: bold;">Carbs (g)</td>
+                    <td style="font-weight: bold;">Fat (g)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Oatmeal with Berries</td>
+                    <td>Breakfast</td>
+                    <td>Oats, Milk, Berries, Honey</td>
+                    <td>350</td>
+                    <td>12</td>
+                    <td>60</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Greek Yogurt Bowl</td>
+                    <td>Breakfast</td>
+                    <td>Greek Yogurt, Granola, Banana, Honey</td>
+                    <td>380</td>
+                    <td>22</td>
+                    <td>48</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>5-20</td>
+                    <td colspan="7">Continue adding more recipe options...</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sheet 3: Ingredients List</h2>
+        <p>This sheet contains a detailed breakdown of all ingredients needed for your meals.</p>
+        <div class="code-block">
+            <table>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td colspan="4" style="text-align: center; font-weight: bold;">INGREDIENTS MASTER LIST</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td style="font-weight: bold;">Ingredient</td>
+                    <td style="font-weight: bold;">Category</td>
+                    <td style="font-weight: bold;">Unit</td>
+                    <td style="font-weight: bold;">Avg Price</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Chicken Breast</td>
+                    <td>Protein</td>
+                    <td>lb</td>
+                    <td>3.99</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Broccoli</td>
+                    <td>Vegetable</td>
+                    <td>bunch</td>
+                    <td>2.49</td>
+                </tr>
+                <tr>
+                    <td>5-30</td>
+                    <td colspan="4">Continue with common ingredients...</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Key Formulas and Features</h2>
+        
+        <h3>1. Data Validation Dropdowns</h3>
+        <p>Create dropdown menus for meal selection:</p>
+        <ol>
+            <li>Select cells for meal choices (e.g., B5:D11)</li>
+            <li>Go to Data > Data validation</li>
+            <li>Set criteria to "List from a range"</li>
+            <li>Set range to your breakfast/lunch/dinner options (filtered by meal type)</li>
+            <li>Example range: =FILTER(RecipeDatabase!A3:A50, RecipeDatabase!B3:B50="Breakfast")</li>
+        </ol>
+
+        <h3>2. Auto-Generated Shopping List</h3>
+        <p>Use this formula to generate your shopping list based on selected meals:</p>
+        <pre>
+=UNIQUE(FILTER(SPLIT(TEXTJOIN(",", TRUE, 
+  IFERROR(ARRAYFORMULA(
+    IF(LEN(B5:D11)>0, 
+       VLOOKUP(B5:D11, RecipeDatabase!A3:D50, 3, FALSE),
+       "")
+  ), "")), ","), LEN(SPLIT(TEXTJOIN(",", TRUE, 
+  IFERROR(ARRAYFORMULA(
+    IF(LEN(B5:D11)>0, 
+       VLOOKUP(B5:D11, RecipeDatabase!A3:D50, 3, FALSE),
+       "")
+  ), "")), ","))>0))
+        </pre>
+
+        <h3>3. Nutrition Summary Calculation</h3>
+        <p>Calculate total nutrition values for the week:</p>
+        <pre>
+=ARRAYFORMULA(SUM(
+  IF(LEN(B5:D11)>0,
+     VLOOKUP(B5:D11, RecipeDatabase!A3:G50, 4, FALSE),
+     0)
+))
+        </pre>
+        <p>(Similar formulas for protein, carbs, and fat, changing the column number in VLOOKUP)</p>
+
+        <h3>4. Dynamic Week Dates</h3>
+        <p>Make your planner update automatically each week:</p>
+        <pre>=TEXT(TODAY(), "mmmm d") & " - " & TEXT(TODAY()+6, "mmmm d, yyyy")</pre>
+    </div>
+
+    <div class="section">
+        <h2>Setting Up the Dynamic Meal Planner</h2>
+        <ol>
+            <li>Create a new Google Sheet with three sheets named "Weekly Meal Plan," "Recipe Database," and "Ingredients List"</li>
+            <li>Set up the sheets according to the structures above</li>
+            <li>Populate your Recipe Database with your favorite meals</li>
+            <li>Set up the data validation dropdowns</li>
+            <li>Implement the formulas for the shopping list and nutrition summary</li>
+            <li>Test by selecting meals and verifying that the shopping list and nutrition information update correctly</li>
+        </ol>
+
+        <div class="note">
+            <p><strong>Tip:</strong> To make this truly dynamic, you can add additional features like:</p>
+            <ul>
+                <li>A budget calculator that estimates the cost of your weekly meals</li>
+                <li>Color coding based on meal types or nutrition goals</li>
+                <li>A meal rotation system that suggests different meals each week</li>
+                <li>Custom filters for dietary restrictions (vegetarian, gluten-free, etc.)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
